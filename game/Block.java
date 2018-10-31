@@ -1,5 +1,6 @@
 package game;
 
+import sedgewick.StdDraw;
 import java.awt.Color;
 
 public class Block implements Drawable {

@@ -1,5 +1,7 @@
 package game;
 
+import sedgewick.StdDraw;
+
 public class Projectile implements Drawable {
 
 	private int playerID;
