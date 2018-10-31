@@ -1,7 +1,5 @@
 package game;
 
-import sedgewick.StdDraw;
-
 public class Gorilla implements Drawable {
 	
 	private int playerID;

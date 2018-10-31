@@ -3,7 +3,7 @@ package game;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.ListIterator;
-import sedgewick.StdDraw;
+import java.util.Scanner;
 
 
 /** TODO
@@ -54,14 +54,20 @@ public class Game {
 				//Check if turn in progress
 				firing = checkFiring( gorillas );
 				//Gorilla firing logic
+				Scanner in = new Scanner(System.in);
 				if ( type.equals( "gorilla" ) ) {
 					Gorilla g = (Gorilla) d;
 					if ( !firing ) {
-						if ( g.getID() == playerTurn && StdDraw.isKeyPressed( KeyEvent.VK_SPACE ) ) {
-							g.fire( 45, 0.035 + ( g.getID() == 1 ? this.wind : -this.wind ) );
+
+						if ( g.getID() == playerTurn ) {
+							System.out.print("Enter angle in degrees: ");
+							int angle = in.nextInt();
+							System.out.print("\n Enter velocity as a number from 1-100: ");
+							int vel = in.nextInt();
+							g.fire( angle, vel / 1000.0 + ( g.getID() == 1 ? this.wind : -this.wind ) );
 							g.getProj().setPos( g.getPos()[0], g.getPos()[1] );
 							drawableIter.add( g.getProj() );
-							System.out.println( "Gorilla " + g.getID() + " is firing." );
+							//System.out.println( "Gorilla " + g.getID() + " is firing." );
 						}
 					}
 				}
