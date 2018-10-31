@@ -60,9 +60,9 @@ public class Game {
 					if ( !firing ) {
 
 						if ( g.getID() == playerTurn ) {
-							System.out.print("Enter angle in degrees: ");
+							System.out.print("Enter angle (degrees): ");
 							int angle = in.nextInt();
-							System.out.print("\n Enter velocity as a number from 1-100: ");
+							System.out.print("\nEnter velocity as a number from 1-100: ");
 							int vel = in.nextInt();
 							g.fire( angle, vel / 1000.0 + ( g.getID() == 1 ? this.wind : -this.wind ) );
 							g.getProj().setPos( g.getPos()[0], g.getPos()[1] );
